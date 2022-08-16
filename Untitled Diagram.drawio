@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-16T02:06:04.061Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="7JOo4PGFXcmdIymBJPiV" version="17.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-16T02:06:19.355Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="w2rozXp_74C8PF1eKEV0" version="17.1.0" type="github">
   <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
     <mxGraphModel dx="1422" dy="737" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
@@ -71,6 +71,9 @@
         </mxCell>
         <mxCell id="S2CWvv1L_C3rbeTGoWaw-17" value="User with credentials" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="931.5" y="362" width="121" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-21" value="Internet" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="751" y="321" width="51" height="18" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
