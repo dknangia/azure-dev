@@ -1,1 +1,31 @@
-<mxfile host="app.diagrams.net" modified="2022-08-16T01:57:05.195Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="T2XtBP-uLjEfDYBE_Czj" version="17.1.0" type="github"><diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">rVZZb6s6EP41ebySg0mbPLKkhFxMs9BQeGMrmEBALGH59WfY2uamkW6lI2Fhf+MZz2L78wwLcS1lVhqQxPWiGYPceobFGcPMWYaZdR9ymwF5xs8D4GfUHSD0BRxp642aE1pS18tHbICKJIkKmt6CTnK5eE5xg1lZllS30z6SyL0BUsv37oCjY0X3qE7dIhjR+dPqS7DxqB+MSy+ZMT7bcs5+lpSXcb1LcvEGSWxNZsYY88Byk+obhNczLGRJUgy9uBa8qEvrbcZeHkg/Xc68S/F/FLjlc4grzFW+sGgat/g3S9E/o5WrFZVjKkZni2bKDfiddl0a90nkr15WUEidYtletEtyWtDkAnI7KYokhglRJ+A/EyMkUZKB3PU+rDIqvlngIup3mkWSAmrl6VDaD1p74DPfL8hNKJqQzpRVWDPMDUPmJb/6M4avY4hW2G1Uxmx41tbr0mkRtTYH5IjJVcEudpsFJs3i6sTOlYRcRYRV68YOlaXovDtuA1P0WyOWF6RB7au+rhXtEBBpXQDWmhQ1huZSlTlQQzeQGctU3ripuTkku6Ncvwqyb0mn1GQCNI3dOIpctL16IqJE4CpZXLN9C9mlKZ1ip2WXthSVpv7SHDCsL0WRfdn7lr5fyfEaE0bGr7rMKjpBpN0XqqTG4BtLtChQNDUksdEQTWaMVmZUWM8T1ys5PINf57rzQT2yWKY8S0JEX48g12SQv5VqaEDMbmPoh9TUF+ikL1J3Q1by5dSa71vNkV5C821Vnt7VqPPVwYerI/BXMzZBDr6FHKyhIhtzhcGschuDXUpaEm8jU9pTpf1RpySa/0BPDUx9/VBPFdcP9PaNGcqP9dpH6+2RGb71egpTp3Z8CpzzVz52YXWd6uNKEbKlN9hfR1292nRemu8HbONtZumLi6IZ7E5YIev9kJsaeCG9IEvgu92kKuFbDhVg1NivVWZdKSKXE6GC/7r/u+EZIgsCmIf7Nshr5cjO1QYa8msl5LAxjZtqsHFEpao5Radz6qtp8oPdUV9g54rY4xZUP7b0Ogd/5k5cJTLz2111HrL7LS5yZCvwpTmKa0YJz+29f1XnHzRXH+K/j/0IPhrahPU68Od1Qllmf2+vz4Mibr/FI4dE5PCrtEcyXUJ1dpKaOrGam0c+7M+bJpevIpxRSV10Z4EI4DWVfQfOAkTQdufTjKPchrkQK+yjbUyofN2FdWi9b0OouW9gvztPJRGNv2Dnbdj/v7fTmLqK5E1nQ4Y93Z9v6BOwd3sHQfYQaW7vISXcM5C1ZriD2ObxOtXVweZl53e3fvfxeZEl508+xICMZAHXt1c/ZKH5J7fBc8FLYq/IGpgyKSyfBpXxpYDROK6+eHexHKDgG+NOmDUyvf9p+YvyoDOy3i8YkLljQHkHY851My/P79gQIu8oLCiAbbA4hy5Mo61l9xM6krLKAkixf+F0YmskOQcS5GU/sF9MXbdT5tOEXoo+vAU/W3QV+KBRNNFn/7KYivIfsOfZjjN7B/5KlZibKjHL57sqPf1QpfnvqwTDrzdQL/v2xsTrPw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-08-16T02:01:20.989Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="F6ICoWteFKjaOAMYI4-r" version="17.1.0" type="github">
+  <diagram name="Page-1" id="03018318-947c-dd8e-b7a3-06fadd420f32">
+    <mxGraphModel dx="1422" dy="737" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="A87j3w3AwgC5yydtKrp0-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJhZDgzYmI5My0zOWExLTRhMGEtYmIzZi0yYTdiN2RiYWY0ZmIiIHdpZHRoPSIxOCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE4IDE4Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImE3M2I3OWI4LWM0MzQtNGNmMy04MTlhLTNjMmYyMTI2YzI2NCIgeDE9IjkiIHkxPSIxNS43IiB4Mj0iOSIgeTI9IjUuNjYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzMmJlZGQiLz48c3RvcCBvZmZzZXQ9IjAuMTgiIHN0b3AtY29sb3I9IiMzMmNhZWEiLz48c3RvcCBvZmZzZXQ9IjAuNDEiIHN0b3AtY29sb3I9IiMzMmQyZjIiLz48c3RvcCBvZmZzZXQ9IjAuNzgiIHN0b3AtY29sb3I9IiMzMmQ0ZjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48dGl0bGU+SWNvbi1uZXR3b3JraW5nLTY4PC90aXRsZT48cGF0aCBkPSJNLjUsNS42NmgxN2EwLDAsMCwwLDEsMCwwdjkuNDhhLjU3LjU3LDAsMCwxLS41Ny41N0gxLjA3YS41Ny41NywwLDAsMS0uNTctLjU3VjUuNjZBMCwwLDAsMCwxLC41LDUuNjZaIiBmaWxsPSJ1cmwoI2E3M2I3OWI4LWM0MzQtNGNmMy04MTlhLTNjMmYyMTI2YzI2NCkiLz48cGF0aCBkPSJNMS4wNywySDE2LjkzYS41Ny41NywwLDAsMSwuNTcuNTdWNS42NmEwLDAsMCwwLDEsMCwwSC41YTAsMCwwLDAsMSwwLDBWMi42QS41Ny41NywwLDAsMSwxLjA3LDJaIiBmaWxsPSIjMDA3OGQ0Ii8+PGNpcmNsZSBjeD0iMTIuODIiIGN5PSIxMC4wNiIgcj0iMS4zOCIgZmlsbD0iI2YyZjJmMiIvPjxjaXJjbGUgY3g9IjkuMDYiIGN5PSIxMC4wNiIgcj0iMS4zOCIgZmlsbD0iI2YyZjJmMiIvPjxjaXJjbGUgY3g9IjUuMTgiIGN5PSIxMC4wNiIgcj0iMS4zOCIgZmlsbD0iI2YyZjJmMiIvPjxyZWN0IHg9IjIuNzkiIHk9IjMuMTIiIHdpZHRoPSIxMi40MyIgaGVpZ2h0PSIxLjQ2IiByeD0iMC4yOCIgZmlsbD0iI2YyZjJmMiIvPjwvc3ZnPg==;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="589" y="295" width="61" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="A87j3w3AwgC5yydtKrp0-2" target="A87j3w3AwgC5yydtKrp0-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A87j3w3AwgC5yydtKrp0-2" value="IP Address" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="585" y="276" width="68" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-1" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/compute/Virtual_Machine.svg;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="162" y="323" width="69" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-3" value="Virtual Machine" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="145" y="398" width="93" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-4" value="" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Network_Security_Groups_Classic.svg;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="387" y="316" width="37" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="S2CWvv1L_C3rbeTGoWaw-6" value="Network Security Group" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="335" y="372" width="137" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
