@@ -3,17 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>SQL.UnitTest.Demo</Name>
+    <Name>SqlProjectDevelopment</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{4afde6d6-2f21-4f94-bcc2-bf0e33f474e2}</ProjectGuid>
+    <ProjectGuid>{207a6e1e-ea7b-4bf0-bd14-4fb0e864edfb}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>SQL.UnitTest.Demo</RootNamespace>
-    <AssemblyName>SQL.UnitTest.Demo</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>SqlProjectDevelopment</RootNamespace>
+    <AssemblyName>SqlProjectDevelopment</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -22,8 +22,6 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
-    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -58,13 +56,5 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Stored Procedures\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Build Include="dbo\Tables\Products.sql" />
-    <Build Include="dbo\Tables\__MigrationHistory.sql" />
-    <Build Include="dbo\Stored Procedures\USP_GetAllProducts.sql" />
   </ItemGroup>
 </Project>
