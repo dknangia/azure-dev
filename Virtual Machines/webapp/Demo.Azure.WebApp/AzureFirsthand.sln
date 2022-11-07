@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Azure.WebApps", "1.Azure.WebApps.csproj", "{3E491B93-90C3-4BED-938C-6BA358760D1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.WebJobs.GenerateRandomNumber", "..\..\..\2.WebJobs.GenerateRandomNumber\2.WebJobs.GenerateRandomNumber.csproj", "{DF5CF12E-7AF7-4FCE-875D-198594B955A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3E491B93-90C3-4BED-938C-6BA358760D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E491B93-90C3-4BED-938C-6BA358760D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E491B93-90C3-4BED-938C-6BA358760D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5CF12E-7AF7-4FCE-875D-198594B955A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5CF12E-7AF7-4FCE-875D-198594B955A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5CF12E-7AF7-4FCE-875D-198594B955A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5CF12E-7AF7-4FCE-875D-198594B955A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
