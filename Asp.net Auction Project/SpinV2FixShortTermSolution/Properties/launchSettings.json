@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SpinV2FixShortTermSolution": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Dev"
+      }
+    }
+  }
+}
