@@ -1,3 +1,6 @@
+using Chapter02;
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -57,14 +60,44 @@ app.MapPost("/hello", async () =>
 
 });
 
+
+/*Router parameters*/
+
+app.MapGet("/users/{username:int}/products/{productId:guid}",
+    (int username, Guid productId) =>
+
+        $"The username is {username} and the productId is {productId}"
+
+    );
+
+
+/*Query parameter binding*/
+app.MapGet("/search", ([FromQuery(Name = "q")] string searchText, [FromQuery(Name = "id")] string id) =>
+
+    $"Query string parameters are ID {id} and Search term : {searchText}"
+);
+
+app.MapGet("/people", (int pageIndex, int itemsPerPage) =>
+    $"Sample result for page: {pageIndex}, and pageSize : {itemsPerPage}"
+);
+
+
+/*Biding default values to query parameter*/
+string SearchMethod(int pageIndex = 0, int pageSize = 50) =>
+    $"Sample result for page: {pageIndex}, and pageSize : {pageSize}";
+
+app.MapGet("/people-result", SearchMethod);
+
+/*Custom bindings*/
+
+
+// GET /navigate?location=43.8427,7.8527
+app.MapGet("/navigate", (Location location) => 
+    $"Location Longitude : {location.Longitude}, and Latitude : {location.Latitude}");
+
 app.Run();
 
 internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
-
-class HelloHandler
-{
-    public string Hello() => "[Instance method] Hello World!";
 }
