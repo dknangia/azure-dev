@@ -16,6 +16,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+else if (app.Environment.IsProduction())
+{
+    //todo : Add production logic over here 
+}
+
+else if (app.Environment.IsStaging())
+{
+    // todo : Add staging logic over here
+}
+
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
