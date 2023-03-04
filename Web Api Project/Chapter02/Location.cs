@@ -1,5 +1,7 @@
 using System.Globalization;
 
+namespace Chapter02;
+
 public class Location
 {
     public double Latitude { get; set; }
