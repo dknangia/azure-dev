@@ -1,5 +1,6 @@
 using System.Reflection;
 using Chapter02;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,16 +8,29 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c=>c.SwaggerDoc("v1", new()
+builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new()
 {
-    Title = builder.Environment.ApplicationName, 
-    Version = "v1", Contact = new()
+    Title = builder.Environment.ApplicationName,
+    Version = "v1",
+    Contact = new()
     {
-        Email = "dknangia@gmail.com", 
-        Name = "Deepak", 
+        Email = "dknangia@gmail.com",
+        Name = "Deepak",
         Url = new Uri("https://nowhere.com")
     }
 }));
+
+/*Adding default cors policy*/
+var corsPolicy = new CorsPolicyBuilder("http://localhost:5200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .Build();
+
+// Adding policy to entire application
+//builder.Services.AddCors(x => x.AddDefaultPolicy(corsPolicy));
+
+//Adding custom policy
+
 
 var app = builder.Build();
 
@@ -104,7 +118,7 @@ app.MapGet("/people-result", SearchMethod);
 
 
 // GET /navigate?location=43.8427,7.8527
-app.MapGet("/navigate", (Location location) => 
+app.MapGet("/navigate", (Location location) =>
     $"Location Longitude : {location.Longitude}, and Latitude : {location.Latitude}");
 
 app.Run();
