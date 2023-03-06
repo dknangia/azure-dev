@@ -3,9 +3,12 @@ using System.Net.Mime;
 using System.Reflection;
 using System.Text.Json;
 using Chapter02;
+using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,8 +45,19 @@ var corsPolicy_ForWeb2 = new CorsPolicyBuilder("http://localhost:5100")
 
 builder.Services.AddCors(c => c.AddPolicy("MyCustomPolicy", corsPolicy_ForWeb2));
 
-var app = builder.Build();
+builder.Services.TryAddSingleton<IActionResultExecutor<ObjectResult>, ProblemDetailsResultExecutor>();
 
+builder.Services.AddProblemDetails(options =>
+{
+    options.MapToStatusCode<NotImplementedException>(StatusCodes.Status501NotImplemented);
+});
+
+var app = builder.Build();
+app.UseProblemDetails();
+
+/*Error handling*/
+
+/*
 app.UseExceptionHandler(exceptionHandlerApp =>
 {
 
@@ -72,6 +86,9 @@ app.UseExceptionHandler(exceptionHandlerApp =>
         }
     });
 });
+*/
+
+
 
 app.UseCors("MyCustomPolicy");
 
@@ -118,9 +135,13 @@ app.MapGet("/hello", async (IConfiguration configuration) =>
 
 }).RequireCors("MyCustomPolicy"); //Applying cors to specific endpoint
 
-var handler = () => "[Lambda variable] Hello world";
+//var handler = () => "[Lambda variable] Hello world";
+var handler = () =>
+{
+    throw new ArgumentException("Internal error", $"Internal error message");
+};
 
-app.MapGet("/hello-inline", handler);
+app.MapGet("/hello-inline", handler).Produces<ProblemDetails>(statusCode: StatusCodes.Status500InternalServerError).WithName("Internal Server ERROR");
 
 var hello = new HelloHandler();
 
