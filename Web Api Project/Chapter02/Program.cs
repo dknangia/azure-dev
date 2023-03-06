@@ -1,6 +1,10 @@
+
+using System.Net.Mime;
 using System.Reflection;
+using System.Text.Json;
 using Chapter02;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,13 +30,50 @@ var corsPolicy = new CorsPolicyBuilder("http://localhost:5200")
     .AllowAnyMethod()
     .Build();
 
+var corsPolicy_ForWeb2 = new CorsPolicyBuilder("http://localhost:5100")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .Build();
+
 // Adding policy to entire application
 //builder.Services.AddCors(x => x.AddDefaultPolicy(corsPolicy));
 
 //Adding custom policy
 
+builder.Services.AddCors(c => c.AddPolicy("MyCustomPolicy", corsPolicy_ForWeb2));
 
 var app = builder.Build();
+
+app.UseExceptionHandler(exceptionHandlerApp =>
+{
+
+    exceptionHandlerApp.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        context.Response.ContentType = MediaTypeNames.Application.Json;
+
+        var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>()!;
+
+        var errorMessage = new
+        {
+            exceptionHandlerPathFeature.Error.Message
+        };
+
+        await context.Response.WriteAsync(JsonSerializer.Serialize(errorMessage));
+        if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+        {
+            await context.Response.WriteAsync("The file is not found");
+
+        }
+
+        if (exceptionHandlerPathFeature?.Path == "/")
+        {
+            await context.Response.WriteAsync("Page : Home");
+        }
+    });
+});
+
+app.UseCors("MyCustomPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -50,27 +91,32 @@ var summaries = new[]
 
 app.MapEndpoints(Assembly.GetExecutingAssembly());
 
+
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateTime.Now.AddDays(index),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    //    var forecast = Enumerable.Range(1, 5).Select(index =>
+    //        new WeatherForecast
+    //        (
+    //            DateTime.Now.AddDays(index),
+    //            Random.Shared.Next(-20, 55),
+    //            summaries[Random.Shared.Next(summaries.Length)]
+    //        ))
+    //        .ToArray();
+    //    return forecast;
+
+    throw new ArgumentException("taggia-parameter", $"Taggia has an error");
+
 })
 .WithName("GetWeatherForecast");
 
 
-app.MapGet("/hello", async () =>
+app.MapGet("/hello", async (IConfiguration configuration) =>
 {
+    var s = configuration.GetValue<string>("MyCustoms:Section1");
     await Task.Delay(100);
-    return "Map GET => Response";
+    return Results.Ok(s);
 
-});
+}).RequireCors("MyCustomPolicy"); //Applying cors to specific endpoint
 
 var handler = () => "[Lambda variable] Hello world";
 
