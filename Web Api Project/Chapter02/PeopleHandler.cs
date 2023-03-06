@@ -7,7 +7,7 @@ namespace Chapter02
     {
         public void MapEndpoints(IEndpointRouteBuilder app)
         {
-            //app.MapGet("/api/people", GetList);
+            app.MapGet("/api/people", GetList).ExcludeFromDescription();
             app.MapGet("/api/people/{id:guid}", Get)
                 .Produces<PeopleService>().WithTags("People API").WithName("Get people by GUID");
             //app.MapPost("/api/people", Insert);
@@ -21,9 +21,9 @@ namespace Chapter02
         }
 
 
-        private static IResult Get(Guid id)
+        private static IResult Get(IConfiguration configuration,  Guid id)
         {
-
+            var s = configuration.GetValue<string>("MyCustoms:Section1");
             return Results.Ok(new PeopleService());
 
         }
