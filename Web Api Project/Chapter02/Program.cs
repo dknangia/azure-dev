@@ -33,17 +33,28 @@ var corsPolicy = new CorsPolicyBuilder("http://localhost:5200")
     .AllowAnyMethod()
     .Build();
 
-var corsPolicy_ForWeb2 = new CorsPolicyBuilder("http://localhost:5100")
+var corsPolicyForWeb2 = new CorsPolicyBuilder("http://localhost:5100")
     .AllowAnyHeader()
     .AllowAnyMethod()
     .Build();
 
+
+Registration(builder);
+
+void Registration(WebApplicationBuilder? webBuilder)
+{
+    if(webBuilder == null) return;
+    webBuilder.Services.AddScoped<IWeatherService, WeatherService>();
+}
+
+
+
 // Adding policy to entire application
-//builder.Services.AddCors(x => x.AddDefaultPolicy(corsPolicy));
+//webBuilder.Services.AddCors(x => x.AddDefaultPolicy(corsPolicy));
 
 //Adding custom policy
 
-builder.Services.AddCors(c => c.AddPolicy("MyCustomPolicy", corsPolicy_ForWeb2));
+builder.Services.AddCors(c => c.AddPolicy("MyCustomPolicy", corsPolicyForWeb2));
 
 builder.Services.TryAddSingleton<IActionResultExecutor<ObjectResult>, ProblemDetailsResultExecutor>();
 
@@ -101,29 +112,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+
 
 app.MapEndpoints(Assembly.GetExecutingAssembly());
 
 
-app.MapGet("/weatherforecast", () =>
-{
-    //    var forecast = Enumerable.Range(1, 5).Select(index =>
-    //        new WeatherForecast
-    //        (
-    //            DateTime.Now.AddDays(index),
-    //            Random.Shared.Next(-20, 55),
-    //            summaries[Random.Shared.Next(summaries.Length)]
-    //        ))
-    //        .ToArray();
-    //    return forecast;
-
-    throw new ArgumentException("taggia-parameter", $"Taggia has an error");
-
-})
+app.MapGet("/weatherforecast", (IWeatherService service) => service.GetForecast())
 .WithName("GetWeatherForecast");
 
 
@@ -190,7 +184,7 @@ app.MapGet("/navigate", (Location location) =>
 
 app.Run();
 
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
+public record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
