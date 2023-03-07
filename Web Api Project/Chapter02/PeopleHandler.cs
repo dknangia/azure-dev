@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Chapter02
 {
@@ -21,7 +22,7 @@ namespace Chapter02
         }
 
 
-        private static IResult Get(IConfiguration configuration,  Guid id)
+        private static IResult Get(IConfiguration configuration, Guid id)
         {
             var s = configuration.GetValue<string>("MyCustoms:Section1");
             return Results.Ok(new PeopleService());
@@ -37,7 +38,18 @@ namespace Chapter02
 
     internal class Person
     {
-        //todo : need to implement Try parse or BindAsync to extract the values
+
+        [Required]
+        [MaxLength(30)]
+        public string? FirstName { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public string? LastName { get; set; }
+
+        [EmailAddress]
+        [StringLength(100, MinimumLength = 6)]
+        public string? Email { get; set; }
     }
 
     public class PeopleService
