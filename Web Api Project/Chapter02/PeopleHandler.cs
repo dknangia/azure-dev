@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
+using MiniValidation;
 
 namespace Chapter02
 {
@@ -9,9 +11,12 @@ namespace Chapter02
         public void MapEndpoints(IEndpointRouteBuilder app)
         {
             app.MapGet("/api/people", GetList).ExcludeFromDescription();
+
             app.MapGet("/api/people/{id:guid}", Get)
                 .Produces<PeopleService>().WithTags("People API").WithName("Get people by GUID");
-            //app.MapPost("/api/people", Insert);
+
+            app.MapPost("/api/people", Insert)
+                .ProducesValidationProblem();
             //app.MapPut("/api/people/{id:guid}", Update);
             //app.MapDelete("/api/people/{id:guid}", Delete);
         }
@@ -29,8 +34,16 @@ namespace Chapter02
 
         }
 
-        private static IResult Insert(Person person, PeopleService people)
-        { return Results.Ok(); }
+        private static IResult Insert(Person person, IWeatherService people)
+        {
+            var isValid = MiniValidator.TryValidate(person, out var errors);
+
+            if (!isValid)
+            {
+                Results.ValidationProblem(errors); 
+            }
+            return Results.NoContent();
+        }
         private static IResult Update(Guid id, Person person, PeopleService people)
         { return Results.Ok(); }
         private static IResult Delete(Guid id) { return Results.Ok(); }
