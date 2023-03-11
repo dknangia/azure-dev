@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualBasic;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using MiniValidation;
+using Chapter02.Models;
 
 namespace Chapter02
 {
@@ -47,22 +47,6 @@ namespace Chapter02
         private static IResult Update(Guid id, Person person, PeopleService people)
         { return Results.Ok(); }
         private static IResult Delete(Guid id) { return Results.Ok(); }
-    }
-
-    internal class Person
-    {
-
-        [Required]
-        [MaxLength(30)]
-        public string? FirstName { get; set; }
-
-        [Required]
-        [MaxLength(30)]
-        public string? LastName { get; set; }
-
-        [EmailAddress]
-        [StringLength(100, MinimumLength = 6)]
-        public string? Email { get; set; }
     }
 
     public class PeopleService
