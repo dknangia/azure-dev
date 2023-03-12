@@ -27,6 +27,8 @@ builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new()
     }
 }));
 
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 /*Adding default cors policy*/
 var corsPolicy = new CorsPolicyBuilder("http://localhost:5200")
     .AllowAnyHeader()
@@ -43,7 +45,7 @@ Registration(builder);
 
 void Registration(WebApplicationBuilder? webBuilder)
 {
-    if(webBuilder == null) return;
+    if (webBuilder == null) return;
     webBuilder.Services.AddScoped<IWeatherService, WeatherService>();
 }
 
