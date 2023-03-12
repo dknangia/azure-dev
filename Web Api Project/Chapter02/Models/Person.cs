@@ -22,7 +22,7 @@ public class Person
 
 public static class PersonData
 {
-    public static Person GetDataById()
+    public static Person GetData()
     {
         var dataList = new List<Person>
         {
