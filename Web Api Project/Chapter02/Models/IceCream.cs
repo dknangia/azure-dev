@@ -17,6 +17,8 @@ namespace Chapter02.Models
         {
             
         }
+
+        public DbSet<IceCream> IceCreams { get; set; }
     }
 }
 
