@@ -10,5 +10,7 @@ namespace Chapter02.DTO
         public string? LastName { get; set; }
 
         public string? Email { get; set; }
+
+        public string? CompleteAddress { get; set; }
     }
 }
