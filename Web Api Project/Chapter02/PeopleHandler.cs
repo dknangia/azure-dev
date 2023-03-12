@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System.Collections.Generic;
+using AutoMapper;
+using Chapter02.DTO;
 using Microsoft.AspNetCore.Mvc;
 using MiniValidation;
 using Chapter02.Models;
@@ -13,7 +15,7 @@ namespace Chapter02
             app.MapGet("/api/people", GetList).ExcludeFromDescription();
 
             app.MapGet("/api/people/{id:guid}", Get)
-                .Produces<PeopleService>().WithTags("People API").WithName("Get people by GUID");
+                .Produces(StatusCodes.Status200OK, typeof(PersonDto)).WithTags("Person DTO API").WithName("Get people by GUID");
 
             app.MapPost("/api/people", Insert)
                 .ProducesValidationProblem();
@@ -27,10 +29,11 @@ namespace Chapter02
         }
 
 
-        private static IResult Get(IConfiguration configuration, Guid id)
+        private static IResult Get(IConfiguration configuration, IMapper mapper, Guid id)
         {
-            var s = configuration.GetValue<string>("MyCustoms:Section1");
-            return Results.Ok(new PeopleService());
+            var p = PersonData.GetData();
+            var result = mapper.Map<PersonDto>(p);
+            return Results.Ok(result);
 
         }
 
