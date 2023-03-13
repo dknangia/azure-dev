@@ -1,6 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace Chapter02.Models
 {
@@ -9,16 +8,33 @@ namespace Chapter02.Models
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
+
+        public static bool TryParse(string? value, IFormatProvider? provider, out IceCream? iceCream)
+        {
+            if (value == null)
+            {
+                iceCream = null;
+                return false;
+            }
+
+            var o = JsonConvert.DeserializeObject<IceCream>(value);
+            iceCream = o as IceCream;
+            return true;
+
+        }
+
+
     }
 
     public class IceCreamDb : DbContext
     {
-        public IceCreamDb(DbContextOptions options ):base(options)
+        public IceCreamDb(DbContextOptions options) : base(options)
         {
-            
+
         }
 
         public DbSet<IceCream> IceCreams { get; set; }
     }
 }
+
 
