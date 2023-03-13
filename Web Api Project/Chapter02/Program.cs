@@ -3,17 +3,20 @@ using System.Net.Mime;
 using System.Reflection;
 using System.Text.Json;
 using Chapter02;
+using Chapter02.Models;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddDbContext<IceCreamDb>(options => options.UseInMemoryDatabase("icecreams"));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new()
 {
@@ -47,6 +50,7 @@ void Registration(WebApplicationBuilder? webBuilder)
 {
     if (webBuilder == null) return;
     webBuilder.Services.AddScoped<IWeatherService, WeatherService>();
+    
 }
 
 
