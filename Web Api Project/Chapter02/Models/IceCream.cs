@@ -18,7 +18,7 @@ namespace Chapter02.Models
             }
 
             var o = JsonConvert.DeserializeObject<IceCream>(value);
-            iceCream = o as IceCream;
+            iceCream = o;
             return true;
 
         }
