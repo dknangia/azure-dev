@@ -9,9 +9,9 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   public forecasts?: IWeatherForecast[];
-
+  public apiUrl = "https://localhost:40443";
   constructor(http: HttpClient) {
-    http.get<IWeatherForecast[]>("/weatherforecast").subscribe(result => {
+    http.get<IWeatherForecast[]>(`/GetWeather`).subscribe(result => {
         this.forecasts = result;
       },
       error => console.error(error));
