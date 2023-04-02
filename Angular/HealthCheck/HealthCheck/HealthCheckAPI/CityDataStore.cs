@@ -5,7 +5,7 @@ namespace HealthCheckAPI
     public class CitiesDataStores
     {
         public List<CityDto> Cities { get; set; }
-        public static CitiesDataStores Current { get; } = new CitiesDataStores(); 
+        public static CitiesDataStores Current { get; } = new CitiesDataStores();
         public CitiesDataStores()
         {
             Cities = new List<CityDto>()
@@ -14,13 +14,47 @@ namespace HealthCheckAPI
                 {
                     Id = 1,
                     Name = "New york city",
-                    Description = "The one with big park"
+                    Description = "The one with big park",
+                    PointOfInterests = new List<PointOfInterest>()
+                    {
+                        new PointOfInterest()
+                        {
+                            Id = 101,
+                            Name = "Empire Building",
+                            Description = "Empire building of the tallest"
+                        },
+                        new PointOfInterest()
+                        {
+
+                            Id = 102,
+                            Name = "Empire Building II",
+                            Description = "Empire building of the tallest"
+                        }
+                    }
+
                 },
                 new CityDto()
                 {
                     Id = 2,
                     Name = "New Delhi",
                     Description = "The one with tallest building"
+                    ,
+                    PointOfInterests = new List<PointOfInterest>()
+                    {
+                        new PointOfInterest()
+                        {
+                            Id = 201,
+                            Name = "Kutub Minaar",
+                            Description = "Empire building of the tallest"
+                        },
+                        new PointOfInterest()
+                        {
+
+                            Id = 202,
+                            Name = "Zoo house",
+                            Description = "Empire building of the tallest"
+                        }
+                    }
                 },
 
                 new CityDto()
