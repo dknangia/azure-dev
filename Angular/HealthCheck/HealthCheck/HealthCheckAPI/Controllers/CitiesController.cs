@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthCheckAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HealthCheckAPI.Controllers
 {
@@ -7,20 +8,27 @@ namespace HealthCheckAPI.Controllers
     public class CitiesController : ControllerBase
     {
 
-        
+
         [HttpGet]
-        public JsonResult GetCities()
+        public ActionResult<IEnumerable<CityDto>> GetCities()
         {
-            return new JsonResult((CitiesDataStores.Current.Cities));
+            return Ok((CitiesDataStores.Current.Cities));
         }
 
 
         [HttpGet("{id:int}")]
-        public JsonResult GetCity(int id)
+        public ActionResult<CityDto> GetCity(int id)
         {
-            return new JsonResult(CitiesDataStores.Current.Cities.Where(x => x.Id == id));
+            var result = CitiesDataStores.Current.Cities.FirstOrDefault(x => x.Id == id);
+
+            if (result != null)
+            {
+                return Ok(result);
+            }
+
+            return NotFound();
         }
 
-        
+
     }
 }

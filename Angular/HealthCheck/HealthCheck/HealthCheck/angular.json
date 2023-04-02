@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/health-check",
+            "outputPath": "dist/HealthCheck/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -94,6 +94,59 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/HealthCheck/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "HealthCheck:build:development",
+              "serverTarget": "HealthCheck:server:development"
+            },
+            "production": {
+              "browserTarget": "HealthCheck:build:production",
+              "serverTarget": "HealthCheck:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "HealthCheck:build:production",
+              "serverTarget": "HealthCheck:server:production"
+            },
+            "development": {
+              "browserTarget": "HealthCheck:build:development",
+              "serverTarget": "HealthCheck:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
