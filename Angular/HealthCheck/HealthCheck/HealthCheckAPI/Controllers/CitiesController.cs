@@ -11,22 +11,16 @@ namespace HealthCheckAPI.Controllers
         [HttpGet]
         public JsonResult GetCities()
         {
-            return new JsonResult(new List<object>
-            {
-                new {id =1 , Name = "New York"},
-                new {id =2, Name = "Canada"}
-            });
+            return new JsonResult((CitiesDataStores.Current.Cities));
         }
 
 
-        [HttpGet("getCity")]
-        public JsonResult GetCity()
+        [HttpGet("{id:int}")]
+        public JsonResult GetCity(int id)
         {
-            return new JsonResult(new List<object>
-            {
-                new {id =1 , Name = "New York"},
-               
-            });
+            return new JsonResult(CitiesDataStores.Current.Cities.Where(x => x.Id == id));
         }
+
+        
     }
 }
