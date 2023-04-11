@@ -20,7 +20,8 @@ export class AppModule {
 
   constructor() {
     if (environment.production) {
-
+      console.log("Production");
     }
+   
   }
 }
