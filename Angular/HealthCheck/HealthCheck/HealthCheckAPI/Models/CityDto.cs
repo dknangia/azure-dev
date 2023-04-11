@@ -6,7 +6,7 @@
         public string? Name { get; set; }
         public string? Description { get; set; }
 
-        public IEnumerable<PointOfInterest> PointOfInterests { get; set; } = new List<PointOfInterest>();
+        public IList<PointOfInterestDto> PointOfInterests { get; set; } = new List<PointOfInterestDto>();
 
     }
 }
