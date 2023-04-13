@@ -64,7 +64,11 @@
             },
             "development": {
               "browserTarget": "HealthCheck:build:development"
+            },
+            "staging": {
+              "browserTarget": "HealthCheck:build:staging"
             }
+
           },
           "defaultConfiguration": "development",
           "options": {
