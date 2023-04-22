@@ -1,1 +1,1 @@
-﻿
+﻿Console.Write("Nullable Reference");
