@@ -25,7 +25,7 @@ namespace Csharp.NewFeatures
             {
                 var commentPreview = comment?.Body is {Length: > 10}
                     ? $"{comment.Body[..10]}..."
-                    : comment.Body;
+                    : comment?.Body;
             }
         }
     }
