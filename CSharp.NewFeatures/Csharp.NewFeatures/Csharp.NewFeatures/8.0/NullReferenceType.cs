@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Csharp.NewFeatures
+﻿namespace Csharp.NewFeatures._8._0
 {
     public class NullReferenceType
     {
