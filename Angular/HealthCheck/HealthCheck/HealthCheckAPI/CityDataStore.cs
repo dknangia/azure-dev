@@ -15,15 +15,15 @@ namespace HealthCheckAPI
                     Id = 1,
                     Name = "New york city",
                     Description = "The one with big park",
-                    PointOfInterests = new List<PointOfInterest>()
+                    PointOfInterests = new List<PointOfInterestDto>()
                     {
-                        new PointOfInterest()
+                        new PointOfInterestDto()
                         {
                             Id = 101,
                             Name = "Empire Building",
                             Description = "Empire building of the tallest"
                         },
-                        new PointOfInterest()
+                        new PointOfInterestDto()
                         {
 
                             Id = 102,
@@ -39,15 +39,15 @@ namespace HealthCheckAPI
                     Name = "New Delhi",
                     Description = "The one with tallest building"
                     ,
-                    PointOfInterests = new List<PointOfInterest>()
+                    PointOfInterests = new List<PointOfInterestDto>()
                     {
-                        new PointOfInterest()
+                        new PointOfInterestDto()
                         {
                             Id = 201,
                             Name = "Kutub Minaar",
                             Description = "Empire building of the tallest"
                         },
-                        new PointOfInterest()
+                        new PointOfInterestDto()
                         {
 
                             Id = 202,
