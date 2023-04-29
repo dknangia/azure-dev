@@ -13,6 +13,6 @@ using Csharp.NewFeatures.Implementation;
 
 // IndicesAndRanges.Run();
 
-RecordAndProperties.Initialize();
+//RecordAndProperties.Initialize();
 
 DataProcessingManager.DataProcessing();
