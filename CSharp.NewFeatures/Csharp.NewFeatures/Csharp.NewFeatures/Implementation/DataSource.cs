@@ -10,7 +10,7 @@ namespace Csharp.NewFeatures.Implementation
     public static class DataSource
     {
         //43.466667 -80.516670
-        public static IEnumerable<Company> GetData()
+        public static List<Company> GetData()
         {
             return new List<Company>
             {
