@@ -8,5 +8,6 @@ public class Company
     public string City { get; set; } = string.Empty;
     public double Latitude { get; set; }
     public double Longitude { get; set; }
+    public int Distance { get; set; }
 
 }
