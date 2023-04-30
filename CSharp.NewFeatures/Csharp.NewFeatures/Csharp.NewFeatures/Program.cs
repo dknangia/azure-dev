@@ -4,15 +4,15 @@ using Csharp.NewFeatures._9._0;
 using Csharp.NewFeatures.Implementation;
 
 
-//PositionalPatternSample ps = new();
-//ps.CallFunction();
+// PositionalPatternSample ps = new();
+// ps.CallFunction();
 
-//TuplePatternMatch tm = new(); 
-//tm.InvokeFunction();
+// TuplePatternMatch tm = new(); 
+// tm.InvokeFunction();
 
 
 // IndicesAndRanges.Run();
 
-//RecordAndProperties.Initialize();
+// RecordAndProperties.Initialize();
 
 DataProcessingManager.DataProcessing();
