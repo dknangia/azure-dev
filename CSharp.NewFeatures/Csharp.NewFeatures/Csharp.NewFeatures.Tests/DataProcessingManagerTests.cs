@@ -32,7 +32,7 @@ namespace Csharp.NewFeatures.Tests
             var distance = DataProcessingManager.CalculateDistance(dealerLatitude, dealerLongitude);
 
             // Assert
-            Assert.AreEqual(expectedDistance, distance);
+            Assert.That(distance, Is.EqualTo(expectedDistance));
         }
     }
 
