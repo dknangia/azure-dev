@@ -2,8 +2,6 @@ using Csharp.NewFeatures.Implementation;
 
 namespace Csharp.NewFeatures.Tests
 {
-
-    using NSubstitute;
     using NUnit.Framework;
 
     [TestFixture]
