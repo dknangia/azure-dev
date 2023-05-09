@@ -1,1 +1,4 @@
-﻿
+﻿1. Create a clear prompt
+2. Be specific
+3. Evaluate the ChatGPT reponse
+4. Decide if you want more information 
