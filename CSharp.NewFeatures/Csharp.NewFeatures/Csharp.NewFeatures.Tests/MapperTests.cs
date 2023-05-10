@@ -4,7 +4,7 @@ using Csharp.NewFeatures.Implementation.Models;
 namespace Csharp.NewFeatures.Tests;
 
 [TestFixture]
-public class MappterTests
+public class MapperTests
 {
     [Test]
     public void Map_ReturnsEmptyList_WhenInputIsNull()
