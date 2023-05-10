@@ -1,6 +1,7 @@
-﻿using NSubstitute;
+﻿using Csharp.NewFeatures.Implementation;
 using Csharp.NewFeatures.Implementation.Models;
-using Csharp.NewFeatures.Implementation;
+
+namespace Csharp.NewFeatures.Tests;
 
 [TestFixture]
 public class MappterTests
@@ -9,7 +10,7 @@ public class MappterTests
     public void Map_ReturnsEmptyList_WhenInputIsNull()
     {
         // Arrange
-        List<Company> companies = null;
+        List<Company>? companies = null;
         var location = (latitude: 10.0, longitude: 20.0);
 
         // Act
@@ -46,11 +47,6 @@ public class MappterTests
         };
         var location = (latitude: 10.0, longitude: 20.0);
 
-        // Mock the CalculateDistance method
-
-        
-
-       //var distance =  DataProcessingManager.CalculateDistance(Arg.Any<double>(), Arg.Any<double>()).Returns(200);
 
         // Act
         var result = companies.Map(location);
