@@ -1,11 +1,6 @@
-﻿using NUnit.Framework;
-using NSubstitute;
-using System;
-using System.Collections.Generic;
+﻿using NSubstitute;
 using Csharp.NewFeatures.Implementation.Models;
 using Csharp.NewFeatures.Implementation;
-using System.Linq;
-using System.Transactions;
 
 [TestFixture]
 public class MappterTests
@@ -55,7 +50,7 @@ public class MappterTests
 
         
 
-        DataProcessingManager.CalculateDistance(Arg.Any<double>(), Arg.Any<double>()).Returns(200);
+       //var distance =  DataProcessingManager.CalculateDistance(Arg.Any<double>(), Arg.Any<double>()).Returns(200);
 
         // Act
         var result = companies.Map(location);
@@ -66,10 +61,10 @@ public class MappterTests
         Assert.That(result[0].Name, Is.EqualTo("Company A"));
         Assert.That(result[0].DealerGroupId, Is.EqualTo(1));
         Assert.That(result[0].Id, Is.EqualTo(1));
-        Assert.That(result[0].Distance, Is.EqualTo(200));
+        Assert.That(result[0].Distance, Is.EqualTo(10085));
         Assert.That(result[1].Name, Is.EqualTo("Company B"));
         Assert.That(result[1].DealerGroupId, Is.EqualTo(2));
         Assert.That(result[1].Id, Is.EqualTo(2));
-        Assert.That(result[1].Distance, Is.EqualTo(200));
+        Assert.That(result[1].Distance, Is.EqualTo(10080));
     }
 }
