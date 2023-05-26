@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +11,16 @@ export class FooterComponent implements OnInit{
 
   public currentDate = new Date();
 
-  ngOnInit(): void {
+  /**
+   *
+   */
+  constructor(@Inject(DOCUMENT) private document: Document) {
     
+    
+  }
+
+  ngOnInit(): void {
+    console.log(this.document.location.href);
   }
 
 
