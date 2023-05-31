@@ -1,0 +1,11 @@
+identifier: l0idadf86fwbn737
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: my-blog
+homeFolder: C:\code\Azure-Dev\Angular\Chapter-1\my-blog
+distFolder: dist/my-blog
+outDir: C:\code\Azure-Dev\Angular\Chapter-1\my-blog\dist\static
+handle404: ''
+allowErrorCollect: false
