@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ReadJson": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Dev"
+      }
+    }
+  }
+}
