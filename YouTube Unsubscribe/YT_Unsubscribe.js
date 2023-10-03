@@ -9,7 +9,7 @@
 (async function iife() {
   // This is the time delay after which the "unsubscribe" button is "clicked"; Change it as per your need!
 
-  var UNSUBSCRIBE_DELAY_TIME = 2000;
+  var unsubscribeDelayTime = 2000;
 
   /**
     
@@ -21,14 +21,14 @@
     
     */
 
-  var runAfterDelay = (fn, delay) =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => {
-        fn();
+  const runAfterDelay = (fn, delay) =>
+      new Promise((resolve, reject) => {
+          setTimeout(() => {
+              fn();
 
-        resolve();
-      }, delay);
-    });
+              resolve();
+          }, delay);
+      });
 
   // Get the channel list; this can be considered a row in the page.
 
@@ -41,13 +41,13 @@
   var ctr = 0;
 
   for (const channel of channels) {
-    var cn = channel.querySelector(`#text`).innerHTML;
+    const cn = channel.querySelector(`#text`).innerHTML;
 
     // Get the subscribe button and trigger a "click"
-    if (cn == "Wristwatch &amp; Wallet") {
+    if (cn === "Wristwatch &amp; Wallet") {
       console.group("Skipping channel");
 
-      console.log(`%cSkipping ${cn}`, 'color: blue');
+      console.log(`%cSkipping ${cn}`, "color: blue");
       console.groupEnd();
       ctr++;
       continue;
@@ -67,6 +67,6 @@
       console.log(`Unsubsribed ${ctr + 1}/${channels.length}`);
 
       ctr++;
-    }, UNSUBSCRIBE_DELAY_TIME);
+    }, unsubscribeDelayTime);
   }
 })();
