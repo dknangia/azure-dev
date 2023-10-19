@@ -15,7 +15,10 @@
       "32": "icon.png"
     },
     "default_title": "My Chrome Extension"
-  }, 
-  "options_page": "options.html", 
-  "permissions": ["storage"]
+  },
+  "options_page": "options.html",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
