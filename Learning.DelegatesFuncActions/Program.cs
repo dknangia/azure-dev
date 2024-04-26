@@ -25,7 +25,7 @@ await ConvertToType1(new Type1() { Property1 = "Type2" }, type3 =>
 
 public class Type1
 {
-    public string? Property1 { get; set; }
+    public string Property1 { get; set; }
     public string Property2 { get; set; }
     public string Property3 { get; set; }
 }
@@ -33,7 +33,7 @@ public class Type1
 
 public class Type2
 {
-    public string? Property1 { get; set; }
+    public string Property1 { get; set; }
     public string Property2 { get; set; }
     public string Property3 { get; set; }
 }
