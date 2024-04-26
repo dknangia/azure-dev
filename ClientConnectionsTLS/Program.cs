@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
+using System.Runtime.Versioning;
 
 namespace ClientConnectionsTLS
 {
@@ -13,9 +16,15 @@ namespace ClientConnectionsTLS
 
         private static void RunProgram()
         {
+            var targetFrameworkAttribute = Assembly.GetExecutingAssembly()
+                .GetCustomAttributes(typeof(System.Runtime.Versioning.TargetFrameworkAttribute), false)
+                .SingleOrDefault();
+
+            var targetFramework = (TargetFrameworkAttribute)targetFrameworkAttribute;
+            Console.WriteLine($"{targetFramework?.FrameworkDisplayName}");
             using (var client = new HttpClient())
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault;
                 Console.WriteLine($"{ServicePointManager.SecurityProtocol}");
                 var url = "https://www.howsmyssl.com/a/check";
                 var response = client.GetAsync(url).Result;
