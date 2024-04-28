@@ -1585,24 +1585,24 @@ public class AzureManager
 
             counter++;
 
-            if (counter % 4 == 0)
-                batch.Actions.Add(IndexDocumentsAction.Merge(
-                    new AdIndex()
-                    {
-                        Id = record.Document.Id,
-                        ForeignId = record.Document.ForeignId ?? record.Document.Id,
-                        Location = record.Document.Location ?? Create(43.636105, -79.397964),
-                        SearchLocations = GetRandomLocations(record.Document.Location)
-                    }));
+            //if (counter % 4 == 0)
+            //    batch.Actions.Add(IndexDocumentsAction.Merge(
+            //        new AdIndex()
+            //        {
+            //            Id = record.Document.Id,
+            //            ForeignId = record.Document.ForeignId ?? record.Document.Id,
+            //            Location = record.Document.Location ?? Create(43.636105, -79.397964),
+            //            SearchLocations = GetRandomLocations(record.Document.Location)
+            //        }));
 
-            //batch.Actions.Add(IndexDocumentsAction.Merge(
-            //    new AdIndex()
-            //    {
-            //        Id = record.Document.Id,
-            //        SearchLocations = new[] { record.Document.Location },
-            //        Location = record.Document.Location,
-            //        ForeignId = record.Document.ForeignId
-            //    }));
+            batch.Actions.Add(IndexDocumentsAction.Merge(
+                new AdIndex()
+                {
+                    Id = record.Document.Id,
+                    SearchLocations = new[] { record.Document.Location },
+                    Location = record.Document.Location,
+                    ForeignId = record.Document.ForeignId
+                }));
         }
 
         try
