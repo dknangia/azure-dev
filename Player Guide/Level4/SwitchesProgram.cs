@@ -14,6 +14,8 @@ namespace Level4
     {
         public void Run()
         {
+            string nameOfuser = string.Empty;
+            string starUserName = "dknangia";
             string message = "The following items are available:"
                                 + "\n" + "1 – Rope"
                                 + "\n" + "2 – Torches"
@@ -26,6 +28,9 @@ namespace Level4
 
             Console.WriteLine(message);
             int choice = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter your Player name");
+            nameOfuser = Console.ReadLine() ?? string.Empty;
 
             if (choice > 0 && choice < 8)
             {
@@ -40,6 +45,11 @@ namespace Level4
                     7 => 1, 8 => 1,
                     _=> throw new ArgumentException("Not a valid selection")
                 };
+
+                if(nameOfuser == starUserName)
+                {
+                    response /= 2; 
+                }
 
                 Console.WriteLine(response + " Gold coins");
 
