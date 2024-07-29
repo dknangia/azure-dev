@@ -42,16 +42,17 @@ namespace Level4
                     4 => 1,
                     5 => 20,
                     6 => 200,
-                    7 => 1, 8 => 1,
+                    7 or 8 => 1,
                     _=> throw new ArgumentException("Not a valid selection")
                 };
 
+                decimal result = default; 
                 if(nameOfuser == starUserName)
                 {
-                    response /= 2; 
+                   result =  (decimal)response / 2; 
                 }
 
-                Console.WriteLine(response + " Gold coins");
+                Console.WriteLine(result + " Gold coins");
 
             }
         }
