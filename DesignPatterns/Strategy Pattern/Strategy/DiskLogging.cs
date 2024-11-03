@@ -1,9 +1,9 @@
 ﻿namespace Strategy_Pattern.Strategy;
 
-public class EmailLogging : ILogging
+public class DiskLogging : ILogging
 {
     public void DoLogging()
     {
-        Console.WriteLine("Email logging");
+        Console.WriteLine("Disk logging");
     }
 }

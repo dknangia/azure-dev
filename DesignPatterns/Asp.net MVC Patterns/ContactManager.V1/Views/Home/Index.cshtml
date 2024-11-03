@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<ContactManager.V1.Models.Model.Contact>
+
+
+<h1>List of Contacts</h1>
+<a asp-action="Add" asp-controller="Home">Add New Contact</a>
+
+<table border="1" cellpadding="10">
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.Phone</td>
+            <td>@item.Email</td>
+            <td>
+                <a asp-controller="Home" 
+                   asp-action="Delete" 
+                   asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

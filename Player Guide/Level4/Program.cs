@@ -31,5 +31,4 @@ using System.Reflection.Metadata.Ecma335;
 //}
 
 
-
-new RunProgram(new MediaGroup());
+var runProgram = new RunProgram(new MediaGroup());

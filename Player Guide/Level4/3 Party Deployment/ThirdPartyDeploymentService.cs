@@ -1,50 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Level4._3_Party_Deployment;
 
-namespace Level4._3_Party_Deployment
+public class RunProgram
 {
+    private readonly LegacyMediaGroup _mediaGroup;
 
-
-    public class RunProgram
+    public RunProgram(IMediaGroup mediaGroup)
     {
-        LegacyMediaGroup _mediaGroup;
-        public RunProgram(IMediaGroup mediaGroup)
-        {
-            _mediaGroup = mediaGroup.CreateMediaGroup();
-        }
+        _mediaGroup = mediaGroup.CreateMediaGroup();
+        _mediaGroup.Medias.Add(new LegacyMedia());
     }
+}
 
+public interface IMediaGroup
+{
+    LegacyMediaGroup CreateMediaGroup();
+}
 
-    public interface IMediaGroup
+public class MediaGroup : IMediaGroup
+{
+    public LegacyMediaGroup CreateMediaGroup()
     {
-        LegacyMediaGroup CreateMediaGroup();
+        return new LegacyMediaGroup();
     }
+}
 
+public class LegacyMediaGroup
+{
+    public List<LegacyMedia> Medias { get; set; } = new();
+    public int MediaGroup1 { get; set; }
+}
 
-    public class MediaGroup : IMediaGroup
+public class LegacyMedia
+{
+    public string Media1 { get; set; } = string.Empty;
+    public string Media2 { get; set; } = string.Empty;
+    public string Media3 { get; set; } = string.Empty;
+}
+
+public class Wine
+{
+    public Wine(decimal price)
     {
-        public LegacyMediaGroup CreateMediaGroup()
-        {
-            return new LegacyMediaGroup();
-        }
+        Price = price;
     }
 
-
-    public class LegacyMediaGroup
-    {      
-
-        public  List<LegacyMedia> Medias { get; set; } = new List<LegacyMedia>();
-        public int MediaGroup1 { get; set; }
-    }
-
-    public class LegacyMedia
+    public Wine(decimal price, int year) : this(price)
     {
-        public  string Media1 { get; set; }
-        public string Media2 { get; set; }
-        public string Media3 { get; set; }
+        Year = year;
     }
+
+    public Wine(decimal price, DateTime year) : this(price, year.Year)
+    {
+    }
+
+    public decimal Price { get; set; }
+    public int Year { get; set; }
 }
