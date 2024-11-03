@@ -20,4 +20,13 @@ public class CustomerExport
 
         return sb;
     }
+
+    public static string ExportToXml(List<Customer> data)
+    {
+        throw new NotImplementedException();
+    }
+    public static string ExportToPdf(List<Customer> data)
+    {
+        throw new NotImplementedException();
+    }
 }
