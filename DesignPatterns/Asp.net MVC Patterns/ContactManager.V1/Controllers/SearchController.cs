@@ -11,9 +11,9 @@ namespace ContactManager.V1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Search(string criteria, string searchBy)
+        public async Task<IActionResult> Search(string criteria, string searchBy)
         {
-            var data = GetData(criteria, searchBy);
+            var data = await GetData(criteria, searchBy);
             ViewBag.Criteria = criteria; 
             ViewBag.SearchBy = searchBy;
             return View(data);
@@ -30,6 +30,15 @@ namespace ContactManager.V1.Controllers
             };
 
             return data;
+        }
+
+        [HttpPost]
+        public async Task<FileResult> Export(string criteria, string searchBy)
+        {
+            List<Customer> data = await GetData(criteria, searchBy);
+            string exportData = CustomerExport.ExportToExcel(data).ToString();
+            return File(System.Text.Encoding.ASCII.GetBytes(exportData),
+                "application/Excel");
         }
     }
 
