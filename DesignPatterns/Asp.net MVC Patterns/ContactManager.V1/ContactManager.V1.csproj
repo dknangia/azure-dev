@@ -16,12 +16,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Search\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Search\Search.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Home\Add.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Home\Delete.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\Home\Delete.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Search\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Search\Search.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Search\" />
   </ItemGroup>
 
 </Project>
