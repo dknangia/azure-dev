@@ -1,5 +1,7 @@
 ﻿using ContactManager.V1.Models;
+using ContactManager.V1.Models.Tax_Calculator;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Completion;
 
 namespace ContactManager.V1.Controllers
 {
@@ -39,6 +41,41 @@ namespace ContactManager.V1.Controllers
             string exportData = CustomerExport.ExportToExcel(data).ToString();
             return File(System.Text.Encoding.ASCII.GetBytes(exportData),
                 "application/Excel");
+        }
+
+        [HttpGet]
+        public IActionResult CalculateTax()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CalculateTax(DtoIncomeDetails income)
+        {
+            if (ModelState.IsValid)
+            {
+                ICountryTaxCalculator tc = null;
+
+                switch (income.Country)
+                {
+                    case "US":
+                    tc = new TaxCalculateForUs();
+                    break;
+
+                    case "UK":
+                        tc = new TaxCalculateForSpain();
+                        break;
+
+                    case "IN":
+                        tc = new TaxCalculateForIndia();
+                        break;
+                    default:
+                        throw new Exception("Country not recognized");
+                }
+
+
+            }
+            return View();
         }
     }
 
