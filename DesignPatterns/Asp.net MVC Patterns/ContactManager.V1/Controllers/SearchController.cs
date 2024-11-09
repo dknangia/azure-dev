@@ -58,12 +58,12 @@ namespace ContactManager.V1.Controllers
 
                 switch (income.Country)
                 {
-                    case "US":
+                    case "USA":
                     tc = new TaxCalculateForUs();
                     break;
 
                     case "UK":
-                        tc = new TaxCalculateForSpain();
+                        tc = new TaxCalculateForUk();
                         break;
 
                     case "IN":
@@ -73,6 +73,10 @@ namespace ContactManager.V1.Controllers
                         throw new Exception("Country not recognized");
                 }
 
+                tc.TotalIncome = income.TotalIncome;
+                tc.TotalDeduction = income.TotalTaxDeduction;
+                var result = TaxCalculator.CalculateTax(tc);
+                ViewBag.TotalTax = result;
 
             }
             return View();
