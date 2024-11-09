@@ -30,7 +30,7 @@
         }
     }
 
-    public class TaxCalculateForSpain : ICountryTaxCalculator
+    public class TaxCalculateForUk : ICountryTaxCalculator
     {
         public decimal TotalIncome { get; set; }
         public decimal TotalDeduction { get; set; }
@@ -43,7 +43,7 @@
 
     public class TaxCalculator
     {
-        public decimal CalculateTax(ICountryTaxCalculator obj)
+        public static decimal CalculateTax(ICountryTaxCalculator obj)
         {
             return obj.CalculateTax();
         } 
