@@ -40,4 +40,19 @@
             return taxableIncome * 20 / 100;
         }
     }
+
+    public class TaxCalculator
+    {
+        public decimal CalculateTax(ICountryTaxCalculator obj)
+        {
+            return obj.CalculateTax();
+        } 
+    }
+
+    public class DtoIncomeDetails
+    {
+        public decimal  TotalIncome { get; set; }
+        public decimal  TotalTaxDeduction { get; set; }
+        public string Country  { get; set; }
+    }
 }
