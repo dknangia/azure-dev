@@ -1,0 +1,33 @@
+﻿@model ContactManager.V1.Models.Model.Contact
+
+<h1>Add new Contact</h1>
+<a asp-action="Index" asp-controller="Home">Go Back...</a>
+
+<form asp-action="Add" asp-controller="Home" method="post">
+    <table cellpadding="10" border="0">
+        <tr>
+            <td><label asp-for="FirstName">First Name: </label></td>
+            <td><input type="text" asp-for="FirstName"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="LastName">Last Name: </label></td>
+            <td><input type="text" asp-for="LastName"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Email">Email: </label></td>
+            <td><input type="text" asp-for="Email"/></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Phone">Phone:  </label></td>
+            <td><input type="text" asp-for="Phone"/></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="Submit" value="Submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<strong>@ViewBag.Message</strong>
+<div asp-validation-summary="@ValidationSummary.All"></div>
