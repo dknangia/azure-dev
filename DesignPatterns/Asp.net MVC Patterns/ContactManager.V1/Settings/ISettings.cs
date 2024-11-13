@@ -25,4 +25,21 @@
             return $"Settings has been saved in the DB";
         }
     }
+
+    public class GuestSettings: ISettings
+    {
+        public Dictionary<string, string> GetSettings()
+        {
+            Dictionary<string, string> settings = new Dictionary<string, string>();
+            settings.Add("GuestName", "John");
+            return settings;
+        }
+
+        public string SetSettings(Dictionary<string, string> settingsDictionary)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
 }
