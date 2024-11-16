@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using ContactManager.V1.Models;
+using ContactManager.V1.Models.Creational;
 using ContactManager.V1.Models.Model;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,16 @@ public class HomeController : Controller
     {
         try
         {
+            Singleton s = Singleton.GetInstance();
+            var i = Singleton.Counter;
+
+            Singleton b = Singleton.GetInstance();
+
+            var x = Singleton.Counter;
+
+            Singleton c = Singleton.GetInstance();
+            var j = Singleton.Counter;
+
             using var context = new AppDbContext();
             var contacts = context.Contacts.ToList();
             return View(contacts);
