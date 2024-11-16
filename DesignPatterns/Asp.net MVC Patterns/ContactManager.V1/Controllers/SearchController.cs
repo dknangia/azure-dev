@@ -19,14 +19,6 @@ namespace ContactManager.V1.Controllers
             var data = await GetData(criteria, searchBy);
             ViewBag.Criteria = criteria; 
             ViewBag.SearchBy = searchBy;
-
-            Singleton s = Singleton.GetInstance();
-
-            Singleton b = Singleton.GetInstance();
-
-            Singleton c = Singleton.GetInstance();
-
-
             return View(data);
         }
 
