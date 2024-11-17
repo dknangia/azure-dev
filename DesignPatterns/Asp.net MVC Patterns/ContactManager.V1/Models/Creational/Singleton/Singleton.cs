@@ -1,13 +1,13 @@
 ﻿using System.Diagnostics.Metrics;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace ContactManager.V1.Models.Creational
+namespace ContactManager.V1.Models.Creational.Singleton
 {
     public class Singleton
     {
         private static Singleton? _instance;
 
-        public static int Counter = 0; 
+        public static int Counter = 0;
 
         private Singleton()
         {
