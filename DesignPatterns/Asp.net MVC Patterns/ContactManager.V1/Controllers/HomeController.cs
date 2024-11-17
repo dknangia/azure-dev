@@ -19,15 +19,15 @@ public class HomeController : Controller
     {
         try
         {
-            Singleton s = Singleton.GetInstance();
-            var i = Singleton.Counter;
+            //Singleton s = Singleton.GetInstance();
+            //var i = Singleton.Counter;
 
-            Singleton b = Singleton.GetInstance();
+            //Singleton b = Singleton.GetInstance();
 
-            var x = Singleton.Counter;
+            //var x = Singleton.Counter;
 
-            Singleton c = Singleton.GetInstance();
-            var j = Singleton.Counter;
+            //Singleton c = Singleton.GetInstance();
+            //var j = Singleton.Counter;
 
             using var context = new AppDbContext();
             var contacts = context.Contacts.ToList();
