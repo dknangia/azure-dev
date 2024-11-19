@@ -159,7 +159,7 @@ namespace ContactManager.V1.Models.Creational.Factory
         }
     }
 
-    public class ChartProviderFree : IChartProvider
+    public class ChartProviderFree : IChartProvider 
     {
         public IChart GetChart()
         {
