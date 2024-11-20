@@ -2,11 +2,11 @@
 {
     public interface IEmployee
     {
-        string Name { get; }
+        string Name { get; set; }
     }
 
     public class Employee : IEmployee
     {
-        public string Name { get; }
+        public string Name { get; set; } = string.Empty;
     }
 }
