@@ -1,24 +1,33 @@
 ﻿using System.Diagnostics;
+using ContactManager.V1.Contracts;
 using ContactManager.V1.Models;
 using ContactManager.V1.Models.Creational;
 using ContactManager.V1.Models.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Operations;
 
 namespace ContactManager.V1.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IServiceProvider _provider;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IServiceProvider provider)
     {
         _logger = logger;
+        _provider = provider;
     }
 
     public IActionResult Index()
     {
         try
         {
+            IEmployee? employee = _provider.GetService<IEmployee>();
+            if (employee == null)
+            {
+                throw new Exception("Object is null");
+            }
             //Singleton s = Singleton.GetInstance();
             //var i = Singleton.Counter;
 
