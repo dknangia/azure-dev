@@ -1,4 +1,5 @@
 using ContactManager.V1.Contracts;
+using ContactManager.V1.Helper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddMvc();
 builder.Services.AddEntityFrameworkSqlServer();
-builder.Services.AddScoped<IEmployee, Employee>();
+builder.Services.AddDependency();
 
 var app = builder.Build();
 builder.Configuration.AddJsonFile("appsettings.json");
