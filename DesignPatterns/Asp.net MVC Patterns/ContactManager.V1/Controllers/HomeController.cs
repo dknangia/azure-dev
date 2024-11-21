@@ -23,11 +23,13 @@ public class HomeController : Controller
     {
         try
         {
-            IEmployee? employee = _provider.GetService<IEmployee>();
-            if (employee == null)
-            {
-                throw new Exception("Object is null");
-            }
+            //IEmployee? employee = _provider.GetService<IEmployee>();
+            //if (employee == null)
+            //{
+            //    throw new Exception("Object is null");
+            //}
+
+            //employee.Name = "First Name";
             //Singleton s = Singleton.GetInstance();
             //var i = Singleton.Counter;
 
