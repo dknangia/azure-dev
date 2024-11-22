@@ -2,6 +2,7 @@
 using ContactManager.V1.Contracts;
 using ContactManager.V1.Models;
 using ContactManager.V1.Models.Creational;
+using ContactManager.V1.Models.DB;
 using ContactManager.V1.Models.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Operations;
@@ -23,6 +24,10 @@ public class HomeController : Controller
     {
         try
         {
+
+            Caller c = new Caller();
+            c.GetData();
+
             //IEmployee? employee = _provider.GetService<IEmployee>();
             //if (employee == null)
             //{
